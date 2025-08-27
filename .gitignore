@@ -29,3 +29,22 @@ redis_data/
 # OS
 .DS_Store
 Thumbs.db
+
+# Backup files
+*backup*
+*_backup*
+*.bak
+
+# Debug and test files
+debug_*
+test_*
+*_test.py
+*_debug.py
+
+# Temporary fix files
+*_fix.py
+*fix_*.py
+
+# Setup scripts with potential config
+setup_*.py
+restore_*.py
